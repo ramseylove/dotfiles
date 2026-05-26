@@ -54,7 +54,8 @@ Manual steps the script can't automate:
 Pull the latest and re-link in one command:
 
 ```bash
-~/.dotfiles/sync.sh
+dotfiles-sync
+# or directly: ~/.dotfiles/sync.sh
 ```
 
 Fails safely with `--ff-only` — if you have uncommitted local changes it will stop rather than overwrite them.
