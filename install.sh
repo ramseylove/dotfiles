@@ -36,8 +36,11 @@ link() {
 }
 
 # Zsh
-link "zsh/.zshrc"   "$HOME/.zshrc"
+link "zsh/.zshrc"    "$HOME/.zshrc"
 link "zsh/.zprofile" "$HOME/.zprofile"
+
+# Git
+link "git/.gitconfig" "$HOME/.gitconfig"
 
 # Homebrew
 if command -v brew &>/dev/null; then
