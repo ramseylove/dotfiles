@@ -36,6 +36,13 @@ link() {
 }
 
 # Claude
-link "CLAUDE.md"             "$HOME/CLAUDE.md"
-link "claude/settings.json"  "$HOME/.claude/settings.json"
+link "CLAUDE.md"               "$HOME/CLAUDE.md"
+link "claude/settings.json"    "$HOME/.claude/settings.json"
 link "claude/keybindings.json" "$HOME/.claude/keybindings.json"
+
+# Raycast
+if [[ -f "$DOTFILES/raycast/settings.rayconfig" ]]; then
+    cp "$DOTFILES/raycast/settings.rayconfig" "$HOME/Desktop/raycast-settings.rayconfig"
+    echo "ACTION Raycast: import ~/Desktop/raycast-settings.rayconfig"
+    echo "       Raycast → ⌘, → Advanced → Import Settings & Data"
+fi
