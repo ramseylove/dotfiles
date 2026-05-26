@@ -29,6 +29,7 @@ git clone https://github.com/ramseylove/dotfiles.git ~/.dotfiles
 | `claude/settings.json` | `~/.claude/settings.json` | Claude Code permissions and settings |
 | `raycast/settings.rayconfig` | Desktop (copied) | Must be imported manually in Raycast |
 | `vscode/settings.json` | `~/Library/Application Support/Code/User/settings.json` | VSCode user settings |
+| `ssh/config` | `~/.ssh/config` | SSH host config. Private keys are never committed |
 
 ## Machine-specific overrides
 

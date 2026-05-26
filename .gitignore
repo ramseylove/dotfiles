@@ -1,2 +1,6 @@
 .DS_Store
 *.bak
+ssh/*.pem
+ssh/id_*
+ssh/*.pub
+ssh/known_hosts

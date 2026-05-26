@@ -35,6 +35,10 @@ link() {
     echo "LINK  $dst -> $src"
 }
 
+# SSH
+link "ssh/config" "$HOME/.ssh/config"
+chmod 600 "$HOME/.dotfiles/ssh/config"
+
 # Zsh
 link "zsh/.zshrc"    "$HOME/.zshrc"
 link "zsh/.zprofile" "$HOME/.zprofile"
