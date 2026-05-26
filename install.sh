@@ -35,6 +35,10 @@ link() {
     echo "LINK  $dst -> $src"
 }
 
+# Zsh
+link "zsh/.zshrc"   "$HOME/.zshrc"
+link "zsh/.zprofile" "$HOME/.zprofile"
+
 # Homebrew
 if command -v brew &>/dev/null; then
     link "Brewfile" "$HOME/.Brewfile"
