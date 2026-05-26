@@ -54,6 +54,9 @@ else
     echo "ACTION Homebrew not installed: https://brew.sh"
 fi
 
+# Ghostty
+link "ghostty/config" "$HOME/.config/ghostty/config"
+
 # VSCode
 link "vscode/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
 

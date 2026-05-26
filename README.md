@@ -30,6 +30,7 @@ git clone https://github.com/ramseylove/dotfiles.git ~/.dotfiles
 | `raycast/settings.rayconfig` | Desktop (copied) | Must be imported manually in Raycast |
 | `vscode/settings.json` | `~/Library/Application Support/Code/User/settings.json` | VSCode user settings |
 | `ssh/config` | `~/.ssh/config` | SSH host config. Private keys are never committed |
+| `ghostty/config` | `~/.config/ghostty/config` | Ghostty terminal config |
 
 ## Machine-specific overrides
 
