@@ -50,6 +50,9 @@ else
     echo "ACTION Homebrew not installed: https://brew.sh"
 fi
 
+# VSCode
+link "vscode/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
+
 # Claude
 link "CLAUDE.md"               "$HOME/CLAUDE.md"
 link "claude/settings.json"    "$HOME/.claude/settings.json"
