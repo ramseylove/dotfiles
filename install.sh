@@ -35,6 +35,14 @@ link() {
     echo "LINK  $dst -> $src"
 }
 
+# Homebrew
+if command -v brew &>/dev/null; then
+    link "Brewfile" "$HOME/.Brewfile"
+    brew bundle install --global --no-lock
+else
+    echo "ACTION Homebrew not installed: https://brew.sh"
+fi
+
 # Claude
 link "CLAUDE.md"               "$HOME/CLAUDE.md"
 link "claude/settings.json"    "$HOME/.claude/settings.json"
