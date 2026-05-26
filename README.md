@@ -49,6 +49,16 @@ Manual steps the script can't automate:
 2. **1Password** — sign in to re-link the CLI
 3. **gh** — run `gh auth login`
 
+## Syncing to an existing machine
+
+Pull the latest and re-link in one command:
+
+```bash
+~/.dotfiles/sync.sh
+```
+
+Fails safely with `--ff-only` — if you have uncommitted local changes it will stop rather than overwrite them.
+
 ## Keeping it up to date
 
 ```bash
