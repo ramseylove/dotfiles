@@ -2,7 +2,7 @@
 
 Personal machine setup for macOS. Covers shell, git, Claude Code, Homebrew, Raycast, and curated macOS settings.
 
-## Install
+## New Mac setup
 
 On a fresh machine:
 
@@ -14,7 +14,15 @@ Or clone first if you want to inspect:
 
 ```bash
 git clone https://github.com/ramseylove/dotfiles.git ~/.dotfiles
-~/.dotfiles/install.sh
+~/.dotfiles/setup.sh
+```
+
+The setup app can run everything or guide you through one section at a time:
+
+```bash
+~/.dotfiles/setup.sh          # interactive menu
+~/.dotfiles/setup.sh --all    # full setup
+~/.dotfiles/setup.sh --verify # check what is installed
 ```
 
 ## What's included
@@ -56,6 +64,12 @@ Manual steps the script can't automate:
 
 If `macos/settings.yaml` exists, `install.sh` applies those saved macOS settings automatically during setup.
 
+You can rerun the setup app any time:
+
+```bash
+~/.dotfiles/setup.sh
+```
+
 ## Saving macOS settings before a wipe
 
 Run this before you reformat the Mac:
@@ -71,7 +85,7 @@ That captures the common preferences this repo manages, including Finder, Dock, 
 
 ## Managing macOS settings
 
-Use the human-friendly settings catalog for day-to-day changes:
+macOS settings are one section in the larger setup app. You can open them from `./setup.sh`, or call the macOS tools directly:
 
 ```bash
 # Browse and apply settings from an interactive menu
