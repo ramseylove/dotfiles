@@ -30,5 +30,6 @@ for domain in "${DOMAINS[@]}"; do
     fi
 
     defaults export "$domain" "$out"
+    plutil -convert xml1 "$out"
     echo "SAVE  $domain -> ${out#$DOTFILES/}"
 done

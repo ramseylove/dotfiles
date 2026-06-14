@@ -72,8 +72,8 @@ if [[ -f "$DOTFILES/raycast/settings.rayconfig" ]]; then
     echo "       Raycast → ⌘, → Advanced → Import Settings & Data"
 fi
 
-# macOS defaults
-if [[ -x "$DOTFILES/macos/apply.sh" && -d "$DOTFILES/macos/defaults" ]]; then
-    echo "Applying saved macOS defaults..."
+# macOS settings
+if [[ -x "$DOTFILES/macos/apply.sh" && -f "$DOTFILES/macos/settings.yaml" ]]; then
+    echo "Applying saved macOS settings..."
     "$DOTFILES/macos/apply.sh"
 fi

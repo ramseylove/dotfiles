@@ -1,6 +1,7 @@
 brew "gh"
 brew "node"
 brew "ollama"
+brew "python"
 cask "1password"
 cask "1password-cli"
 cask "claude-code"

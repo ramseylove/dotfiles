@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal machine setup for macOS. Covers shell, git, Claude Code, Homebrew, Raycast, and a curated set of macOS defaults.
+Personal machine setup for macOS. Covers shell, git, Claude Code, Homebrew, Raycast, and curated macOS settings.
 
 ## Install
 
@@ -31,7 +31,8 @@ git clone https://github.com/ramseylove/dotfiles.git ~/.dotfiles
 | `vscode/settings.json` | `~/Library/Application Support/Code/User/settings.json` | VSCode user settings |
 | `ssh/config` | `~/.ssh/config` | SSH host config. Private keys are never committed |
 | `ghostty/config` | `~/.config/ghostty/config` | Ghostty terminal config |
-| `macos/defaults/*.plist` | `~/Library/Preferences/...` | Exported macOS preference domains |
+| `macos/settings.yaml` | Applied with `macos/apply.sh` | Human-editable macOS settings catalog |
+| `macos/defaults/*.plist` | Backup snapshots | Exported macOS preference domains |
 
 ## Machine-specific overrides
 
@@ -53,7 +54,7 @@ Manual steps the script can't automate:
 2. **1Password** — sign in to re-link the CLI
 3. **gh** — run `gh auth login`
 
-If you have committed `macos/defaults/*.plist`, `install.sh` applies those saved macOS preferences automatically during setup.
+If `macos/settings.yaml` exists, `install.sh` applies those saved macOS settings automatically during setup.
 
 ## Saving macOS settings before a wipe
 
@@ -67,6 +68,49 @@ git push
 ```
 
 That captures the common preferences this repo manages, including Finder, Dock, screenshots, keyboard shortcuts, and global UI defaults. Some things still cannot be fully restored by `defaults`, like Apple ID sign-in, Touch ID, Wi-Fi passwords, and permissions prompts.
+
+## Managing macOS settings
+
+Use the human-friendly settings catalog for day-to-day changes:
+
+```bash
+# Browse and apply settings from an interactive menu
+./macos/settings.sh
+
+# Apply all saved settings
+./macos/apply.sh
+
+# Apply one setting or one group
+./macos/apply.sh dock.autohide
+./macos/apply.sh --tag finder
+
+# See what differs between this Mac and settings.yaml
+./macos/diff.sh
+```
+
+The first run creates `macos/.venv` and installs `PyYAML` from `macos/requirements.txt`.
+
+## Adding more macOS settings later
+
+Most macOS preferences live in a `defaults` domain. To add one manually:
+
+1. Change the setting in System Settings or the app.
+2. Find the domain, usually from the plist name in `~/Library/Preferences`, for example `com.apple.dock`.
+3. Add a friendly entry to `macos/settings.yaml`.
+4. Run `./macos/diff.sh` and `./macos/apply.sh <setting-id>` to verify it.
+
+For discovery, take a before/after snapshot around a System Settings change:
+
+```bash
+./macos/snapshot.sh before
+# Change the setting in System Settings
+./macos/snapshot.sh after
+./macos/discover.sh before after
+```
+
+When you find the changed domain and key, add it to `macos/settings.yaml`. If it belongs in raw backup snapshots too, add that domain to `DOMAINS` in `macos/export.sh`.
+
+The exporter converts plist files to XML so they are readable in editors and easy to diff.
 
 ## Syncing to an existing machine
 
@@ -90,6 +134,9 @@ brew bundle dump --global --force
 
 # Re-export macOS defaults after changing system preferences
 ./macos/export.sh
+
+# Update curated macOS settings
+./macos/settings.sh
 
 # Push changes
 git -C ~/.dotfiles add -A && git -C ~/.dotfiles commit -m "..." && git -C ~/.dotfiles push

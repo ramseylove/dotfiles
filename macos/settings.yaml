@@ -1,0 +1,124 @@
+settings:
+  dock.autohide:
+    label: Automatically hide and show the Dock
+    description: Hide the Dock until the pointer reaches the screen edge.
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: true
+    restart:
+      - Dock
+    tags:
+      - dock
+
+  dock.show_recent_apps:
+    label: Show recent applications in Dock
+    description: Controls the recent apps section at the right side of the Dock.
+    domain: com.apple.dock
+    key: show-recents
+    type: bool
+    value: false
+    restart:
+      - Dock
+    tags:
+      - dock
+
+  dock.tile_size:
+    label: Dock icon size
+    description: Sets the Dock icon size in pixels.
+    domain: com.apple.dock
+    key: tilesize
+    type: int
+    value: 48
+    restart:
+      - Dock
+    tags:
+      - dock
+
+  finder.show_all_extensions:
+    label: Show all filename extensions
+    description: Makes file extensions visible in Finder.
+    domain: NSGlobalDomain
+    key: AppleShowAllExtensions
+    type: bool
+    value: true
+    restart:
+      - Finder
+    tags:
+      - finder
+
+  finder.show_path_bar:
+    label: Show Finder path bar
+    description: Shows the path bar at the bottom of Finder windows.
+    domain: com.apple.finder
+    key: ShowPathbar
+    type: bool
+    value: true
+    restart:
+      - Finder
+    tags:
+      - finder
+
+  finder.show_status_bar:
+    label: Show Finder status bar
+    description: Shows item counts and free space at the bottom of Finder windows.
+    domain: com.apple.finder
+    key: ShowStatusBar
+    type: bool
+    value: true
+    restart:
+      - Finder
+    tags:
+      - finder
+
+  screenshots.disable_shadow:
+    label: Disable shadow in window screenshots
+    description: Removes the drop shadow from Cmd-Shift-4 window screenshots.
+    domain: com.apple.screencapture
+    key: disable-shadow
+    type: bool
+    value: true
+    restart:
+      - SystemUIServer
+    tags:
+      - screenshots
+
+  keyboard.fast_key_repeat:
+    label: Fast keyboard repeat
+    description: Lowers the delay before a held key starts repeating.
+    domain: NSGlobalDomain
+    key: InitialKeyRepeat
+    type: int
+    value: 15
+    tags:
+      - keyboard
+
+  keyboard.key_repeat:
+    label: Keyboard repeat rate
+    description: Sets how quickly held keys repeat.
+    domain: NSGlobalDomain
+    key: KeyRepeat
+    type: int
+    value: 2
+    tags:
+      - keyboard
+
+  trackpad.tap_to_click:
+    label: Tap to click
+    description: Enables tapping the trackpad to click.
+    domain: com.apple.AppleMultitouchTrackpad
+    key: Clicking
+    type: bool
+    value: true
+    tags:
+      - trackpad
+
+  trackpad.bluetooth_tap_to_click:
+    label: Bluetooth trackpad tap to click
+    description: Enables tap to click for external Magic Trackpads.
+    domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+    key: Clicking
+    type: bool
+    value: true
+    tags:
+      - trackpad

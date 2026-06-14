@@ -4,3 +4,6 @@ ssh/*.pem
 ssh/id_*
 ssh/*.pub
 ssh/known_hosts
+macos/.venv/
+macos/snapshots/
+__pycache__/
