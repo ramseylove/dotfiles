@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal machine setup for macOS. Covers shell, git, Claude Code, Homebrew, and Raycast.
+Personal machine setup for macOS. Covers shell, git, Claude Code, Homebrew, Raycast, and a curated set of macOS defaults.
 
 ## Install
 
@@ -31,6 +31,7 @@ git clone https://github.com/ramseylove/dotfiles.git ~/.dotfiles
 | `vscode/settings.json` | `~/Library/Application Support/Code/User/settings.json` | VSCode user settings |
 | `ssh/config` | `~/.ssh/config` | SSH host config. Private keys are never committed |
 | `ghostty/config` | `~/.config/ghostty/config` | Ghostty terminal config |
+| `macos/defaults/*.plist` | `~/Library/Preferences/...` | Exported macOS preference domains |
 
 ## Machine-specific overrides
 
@@ -52,6 +53,21 @@ Manual steps the script can't automate:
 2. **1Password** — sign in to re-link the CLI
 3. **gh** — run `gh auth login`
 
+If you have committed `macos/defaults/*.plist`, `install.sh` applies those saved macOS preferences automatically during setup.
+
+## Saving macOS settings before a wipe
+
+Run this before you reformat the Mac:
+
+```bash
+./macos/export.sh
+git add macos/defaults
+git commit -m "Save macOS defaults"
+git push
+```
+
+That captures the common preferences this repo manages, including Finder, Dock, screenshots, keyboard shortcuts, and global UI defaults. Some things still cannot be fully restored by `defaults`, like Apple ID sign-in, Touch ID, Wi-Fi passwords, and permissions prompts.
+
 ## Syncing to an existing machine
 
 Pull the latest and re-link in one command:
@@ -71,6 +87,9 @@ brew bundle dump --global --force
 
 # Re-export Raycast settings after config changes
 # Raycast → ⌘, → Advanced → Export Settings & Data → ~/.dotfiles/raycast/settings.rayconfig
+
+# Re-export macOS defaults after changing system preferences
+./macos/export.sh
 
 # Push changes
 git -C ~/.dotfiles add -A && git -C ~/.dotfiles commit -m "..." && git -C ~/.dotfiles push
