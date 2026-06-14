@@ -17,13 +17,26 @@ git clone https://github.com/ramseylove/dotfiles.git ~/.dotfiles
 ~/.dotfiles/setup.sh
 ```
 
-The setup app can run everything or guide you through one section at a time:
+The Textual setup app can run everything or guide you through one section at a time:
 
 ```bash
-~/.dotfiles/setup.sh          # interactive menu
-~/.dotfiles/setup.sh --all    # full setup
+~/.dotfiles/setup.sh          # interactive checklist
+~/.dotfiles/setup.sh --all    # blind full setup
 ~/.dotfiles/setup.sh --verify # check what is installed
 ```
+
+The checklist lets you toggle setup sections before running them:
+
+```text
+1. [x] Link dotfiles
+2. [x] Install Homebrew packages
+3. [x] Apply saved macOS settings
+4. [x] Prepare Raycast import
+5. [x] Show manual steps
+6. [x] Verify setup
+```
+
+The first run creates `.setup-venv` and installs the terminal UI dependency from `requirements.txt`.
 
 ## What's included
 
