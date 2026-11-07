@@ -1,4 +1,6 @@
 {
     "claudeCode.preferredLocation": "panel",
-    "claudeCode.useTerminal": true
+    "claudeCode.useTerminal": true,
+    "git.confirmSync": false,
+    "docker.extension.enableComposeLanguageServer": false
 }

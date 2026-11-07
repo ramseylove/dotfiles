@@ -42,30 +42,49 @@ The first run creates `.setup-venv` and installs the terminal UI dependency from
 
 | File | Symlinked to | Notes |
 |---|---|---|
-| `zsh/.zshrc` | `~/.zshrc` | Shell config. Source `~/.zshrc.local` for machine-specific overrides |
+| `zsh/.zshrc` | `~/.zshrc` | Shell config. Sources `~/.aliases` and `~/.zshrc.local` |
+| `zsh/.aliases` | `~/.aliases` | Shell aliases, kept separate from `.zshrc` |
 | `zsh/.zprofile` | `~/.zprofile` | Homebrew shell env |
 | `git/.gitconfig` | `~/.gitconfig` | Global git config. Add `~/.gitconfig.local` for per-machine overrides (e.g. work email) |
-| `Brewfile` | `~/.Brewfile` | Homebrew packages and casks |
+| `Brewfile` | Not linked | Package list the setup app installs from. Your machine's brew state stays separate |
 | `CLAUDE.md` | `~/CLAUDE.md` | Global Claude Code instructions |
 | `claude/settings.json` | `~/.claude/settings.json` | Claude Code permissions and settings |
 | `raycast/settings.rayconfig` | Desktop (copied) | Must be imported manually in Raycast |
 | `vscode/settings.json` | `~/Library/Application Support/Code/User/settings.json` | VSCode user settings |
-| `ssh/config` | `~/.ssh/config` | SSH host config. Private keys are never committed |
+| `ssh/config` | `~/.ssh/config` | Generic SSH host config. Per-machine bits live in `~/.ssh/config.local` (see below) |
 | `ghostty/config` | `~/.config/ghostty/config` | Ghostty terminal config |
 | `macos/settings.yaml` | Applied with `macos/apply.sh` | Human-editable macOS settings catalog |
 | `macos/defaults/*.plist` | Backup snapshots | Exported macOS preference domains |
 
 ## Machine-specific overrides
 
-Some config should differ per machine. These files are never committed:
+Some config should differ per machine. These files live only on the machine
+they apply to and are never committed, so the structure is documented here —
+recreate them by hand on each new machine.
 
-**`~/.zshrc.local`** — extra env vars, aliases, or PATH entries specific to one machine.
+**`~/.zshrc.local`** — extra env vars or PATH entries specific to one machine. Shared aliases go in the committed `zsh/.aliases` instead. When setup links `.zshrc`, an existing `~/.zshrc` is moved here so it keeps loading (unless `~/.zshrc.local` already exists, in which case it's backed up to `~/.zshrc.bak` for you to merge).
 
 **`~/.gitconfig.local`** — git overrides, e.g. a work email or signing key:
 ```ini
 [user]
     email = ryan@company.com
 ```
+
+**`~/.ssh/config.local`** — per-machine SSH options, most commonly the `IdentityFile` for that machine's key. The committed `ssh/config` holds the generic `Host`/`HostName`/`User`, and includes this file from the top so its values win (ssh uses the first value it sees for each option). Copy the committed template `ssh/config.local.example` as a starting point:
+
+```bash
+cp ssh/config.local.example ~/.ssh/config.local
+chmod 600 ~/.ssh/config.local
+```
+
+Match the `Host` to a block in `ssh/config` and add only the per-machine bits — the shared settings are inherited:
+
+```sshconfig
+Host github.com
+    IdentityFile ~/.ssh/your_key_here
+```
+
+Verify the merged result with `ssh -G github.com`.
 
 ## After installing
 
@@ -153,8 +172,9 @@ Fails safely with `--ff-only` — if you have uncommitted local changes it will 
 ## Keeping it up to date
 
 ```bash
-# Sync new brew installs into the Brewfile
-brew bundle dump --global --force
+# Overwrite the repo Brewfile with what's installed on this machine
+brewfile-sync
+# or directly: brew bundle dump --file ~/.dotfiles/Brewfile --force
 
 # Re-export Raycast settings after config changes
 # Raycast → ⌘, → Advanced → Export Settings & Data → ~/.dotfiles/raycast/settings.rayconfig
