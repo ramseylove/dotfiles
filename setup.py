@@ -136,6 +136,9 @@ def _brew_path() -> str | None:
         return found
     for candidate in ("/opt/homebrew/bin/brew", "/usr/local/bin/brew"):
         if Path(candidate).exists():
+            # Later steps (npm, mas, code) need brew-installed tools on PATH too.
+            brew_bin = str(Path(candidate).parent)
+            os.environ["PATH"] = brew_bin + os.pathsep + os.environ.get("PATH", "")
             return candidate
     return None
 
@@ -286,8 +289,9 @@ def install_homebrew() -> None:
         )
     run([
         "/bin/bash", "-c",
-        "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)",
+        '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"',
     ])
+    _brew_path()
 
 
 def install_formula(name: str) -> Callable[[], None]:
