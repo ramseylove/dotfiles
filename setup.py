@@ -205,6 +205,16 @@ def check_brew() -> bool:
     return command_exists("brew")
 
 
+DOCKER_CLI_PLUGINS = {"docker-compose", "docker-buildx"}
+
+
+def _docker_plugin_paths(brew: str, name: str) -> tuple[Path, Path]:
+    prefix = subprocess.run(
+        [brew, "--prefix"], capture_output=True, text=True, check=True,
+    ).stdout.strip()
+    return Path(prefix) / "opt" / name / "bin" / name, HOME / ".docker/cli-plugins" / name
+
+
 def check_formula(name: str) -> Callable[[], bool]:
     def _check() -> bool:
         brew = _brew_path()
@@ -214,7 +224,12 @@ def check_formula(name: str) -> Callable[[], bool]:
             [brew, "list", "--formula", name],
             capture_output=True,
         )
-        return result.returncode == 0
+        if result.returncode != 0:
+            return False
+        if name in DOCKER_CLI_PLUGINS:
+            target, link = _docker_plugin_paths(brew, name)
+            return link.is_symlink() and Path(os.readlink(link)) == target
+        return True
     return _check
 
 
@@ -285,7 +300,7 @@ def install_homebrew() -> None:
     if LOG_SINK:
         raise SetupError(
             "the Homebrew installer asks for your password, which can't be typed in the TUI. "
-            "Quit (q) and run ./setup.sh --brew, then reopen ./setup.sh"
+            "Quit (q) and rerun ./setup.sh — it offers to install Homebrew before opening"
         )
     run([
         "/bin/bash", "-c",
@@ -301,6 +316,13 @@ def install_formula(name: str) -> Callable[[], None]:
         if not brew:
             raise SetupError("Homebrew is not installed — run Install Homebrew first")
         run([brew, "install", name])
+        if name in DOCKER_CLI_PLUGINS:
+            target, link = _docker_plugin_paths(brew, name)
+            link.parent.mkdir(parents=True, exist_ok=True)
+            if link.is_symlink() or link.exists():
+                link.unlink()
+            link.symlink_to(target)
+            emit(f"LINK  {link} -> {target}")
     return _action
 
 
