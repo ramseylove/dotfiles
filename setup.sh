@@ -7,7 +7,7 @@ BREW_INSTALL='/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homeb
 
 find_brew() {
     local candidate
-    for candidate in "$(command -v brew 2>/dev/null)" /opt/homebrew/bin/brew /usr/local/bin/brew; do
+    for candidate in "$(command -v brew 2>/dev/null)" /opt/homebrew/bin/brew /usr/local/bin/brew /home/linuxbrew/.linuxbrew/bin/brew; do
         if [[ -n "$candidate" && -x "$candidate" ]]; then
             echo "$candidate"
             return 0
