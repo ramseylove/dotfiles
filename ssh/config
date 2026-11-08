@@ -6,3 +6,7 @@ Host github.com
   HostName github.com
   User git
   AddKeysToAgent yes
+
+# Use the 1Password SSH agent only where it's enabled (Settings -> Developer).
+Match exec "test -S \"$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\""
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"

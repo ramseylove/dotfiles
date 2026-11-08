@@ -21,9 +21,12 @@ The Textual setup app can run everything or guide you through one section at a t
 
 ```bash
 ~/.dotfiles/setup.sh          # interactive checklist
+~/.dotfiles/setup.sh --brew   # install Homebrew only
 ~/.dotfiles/setup.sh --all    # blind full setup
 ~/.dotfiles/setup.sh --verify # check what is installed
 ```
+
+If Homebrew is missing, `setup.sh` offers to install it first. It asks for your password once, then the rest runs unattended.
 
 The checklist lets you toggle setup sections before running them:
 
@@ -91,7 +94,7 @@ Verify the merged result with `ssh -G github.com`.
 Manual steps the script can't automate:
 
 1. **Raycast** — import `~/Desktop/raycast-settings.rayconfig` via Raycast → ⌘, → Advanced → Import Settings & Data
-2. **1Password** — sign in to re-link the CLI
+2. **1Password** — sign in to re-link the CLI, then Settings → Developer → Use the SSH agent (ssh uses it only once it's on)
 3. **gh** — run `gh auth login`
 4. **Finder** — Settings → Sidebar → check your home folder
 
