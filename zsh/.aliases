@@ -1,0 +1,9 @@
+alias dotfiles-sync="~/.dotfiles/sync.sh"
+alias brewfile-sync="brew bundle dump --file ~/.dotfiles/Brewfile --force"
+
+# Docker Compose
+alias dc="docker compose"
+alias dcu="docker compose up -d"
+alias dcub="docker compose up -d --build"
+alias dce="docker compose exec"
+alias dcl="docker compose logs -f"

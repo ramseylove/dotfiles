@@ -1,0 +1,15 @@
+# Machine-specific SSH overrides.
+#
+# Copy this to ~/.ssh/config.local on each machine and set the options that
+# differ per machine (most commonly IdentityFile). The generic ssh/config
+# includes ~/.ssh/config.local from the top, so values here win (ssh uses
+# the first value it sees for each option).
+#
+#   cp ssh/config.local.example ~/.ssh/config.local
+#   chmod 600 ~/.ssh/config.local
+#
+# Match the Host to a block in ssh/config and add only the per-machine bits —
+# the shared HostName/User/etc. are inherited. Verify with: ssh -G github.com
+
+Host github.com
+    IdentityFile ~/.ssh/your_key_here

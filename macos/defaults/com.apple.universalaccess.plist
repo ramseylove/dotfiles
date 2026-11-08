@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>History</key>
+	<dict>
+		<key>MouseKeys</key>
+		<array>
+			<dict>
+				<key>Date</key>
+				<string>2024-02-21 12:14:17</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2024-02-21 12:14:18</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2024-02-21 15:21:47</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2024-02-21 15:21:49</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2024-02-21 15:21:49</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2024-02-25 09:28:27</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2024-02-25 09:28:28</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2024-02-26 16:18:29</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2024-02-26 16:18:30</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2024-07-15 16:44:21</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2024-07-15 16:44:22</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-01-13 09:10:39</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-01-13 09:10:58</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-01-13 09:10:58</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-01-13 09:34:50</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-01-14 18:03:40</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-02-06 14:54:22</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-02-06 14:54:42</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-02-06 14:54:43</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-02-06 14:54:45</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-03-03 18:24:45</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-03-03 18:24:55</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-03-03 18:24:56</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-03-03 18:24:56</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-06-12 12:16:01</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-06-12 12:16:18</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-06-12 12:16:19</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-06-12 12:16:26</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-08-15 09:38:52</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-08-15 09:39:13</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-08-15 09:39:14</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-08-15 09:39:27</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-09-02 02:00:16</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-09-02 02:16:44</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-09-02 02:16:44</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2025-09-02 02:16:47</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2026-02-09 10:41:09</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2026-02-09 10:41:28</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2026-02-09 10:41:29</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2026-02-09 10:41:31</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2026-02-26 15:08:53</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2026-03-02 10:48:42</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>Date</key>
+				<string>2026-05-28 21:01:58</string>
+				<key>Reason</key>
+				<string>Reset</string>
+				<key>State</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>closeViewHotkeysEnabled</key>
+	<false/>
+	<key>closeViewZoomDisplayID</key>
+	<integer>0</integer>
+	<key>closeViewZoomFactor</key>
+	<real>1</real>
+	<key>com.apple.custommenu.apps</key>
+	<array>
+		<string>NSGlobalDomain</string>
+	</array>
+	<key>login</key>
+	<false/>
+	<key>sessionChange</key>
+	<false/>
+</dict>
+</plist>

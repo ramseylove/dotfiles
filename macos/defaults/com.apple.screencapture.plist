@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>last-analytics-stamp</key>
+	<real>802655053.73729503</real>
+	<key>last-selection</key>
+	<dict>
+		<key>Height</key>
+		<real>719.25</real>
+		<key>Width</key>
+		<real>1398</real>
+		<key>X</key>
+		<real>29</real>
+		<key>Y</key>
+		<real>181.375</real>
+	</dict>
+	<key>last-selection-display</key>
+	<integer>0</integer>
+	<key>location</key>
+	<string>~/Documents/Screenshots</string>
+	<key>location-last</key>
+	<string>~/Documents/Screenshots</string>
+	<key>style</key>
+	<string>selection</string>
+	<key>target</key>
+	<string>file</string>
+	<key>video</key>
+	<true/>
+</dict>
+</plist>

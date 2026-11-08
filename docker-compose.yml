@@ -1,0 +1,20 @@
+# Linux sandbox for running ./setup.sh. macOS settings won't apply, but the
+# dotfile linking and Homebrew/package paths work.
+#
+#   docker compose up -d --build
+#   docker compose exec dotfiles ./setup.sh
+#   docker compose down            # add -v to also wipe the venv volume
+services:
+  dotfiles:
+    build: .
+    image: dotfiles-setup
+    init: true
+    stdin_open: true
+    tty: true
+    volumes:
+      - .:/home/dev/dotfiles
+      # Shadow the host's macOS .setup-venv so setup.sh builds a Linux venv.
+      - setup-venv:/home/dev/dotfiles/.setup-venv
+
+volumes:
+  setup-venv:

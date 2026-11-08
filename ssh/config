@@ -1,3 +1,8 @@
+# Machine-specific overrides (IdentityFile, etc.) — not tracked in the repo.
+# Included first so its values win (ssh uses the first value seen per option).
+Include ~/.ssh/config.local
+
 Host github.com
+  HostName github.com
+  User git
   AddKeysToAgent yes
-  IdentityFile ~/.ssh/ryllmstudio
