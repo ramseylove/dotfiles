@@ -93,6 +93,7 @@ Manual steps the script can't automate:
 1. **Raycast** — import `~/Desktop/raycast-settings.rayconfig` via Raycast → ⌘, → Advanced → Import Settings & Data
 2. **1Password** — sign in to re-link the CLI
 3. **gh** — run `gh auth login`
+4. **Finder** — Settings → Sidebar → check your home folder
 
 If `macos/settings.yaml` exists, `install.sh` applies those saved macOS settings automatically during setup.
 

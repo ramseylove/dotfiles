@@ -388,7 +388,8 @@ def show_manual_steps() -> None:
     emit("1. Raycast: import ~/Desktop/raycast-settings.rayconfig")
     emit("2. 1Password: sign in to re-link the CLI")
     emit("3. GitHub CLI: run gh auth login")
-    emit("4. Restart apps or log out if a macOS setting does not appear immediately")
+    emit("4. Finder: Settings -> Sidebar -> check your home folder")
+    emit("5. Restart apps or log out if a macOS setting does not appear immediately")
 
 
 def verify_setup() -> None:

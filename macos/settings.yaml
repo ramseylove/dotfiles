@@ -122,3 +122,25 @@ settings:
     value: true
     tags:
       - trackpad
+
+  finder.new_window_home:
+    label: New Finder windows open Home
+    description: Opens new Finder windows in the home folder.
+    domain: com.apple.finder
+    key: NewWindowTarget
+    type: string
+    value: PfHm
+    restart:
+      - Finder
+    tags:
+      - finder
+
+  trackpad.natural_scrolling:
+    label: Natural scrolling
+    description: Content follows finger movement. Off means traditional scroll direction.
+    domain: NSGlobalDomain
+    key: com.apple.swipescrolldirection
+    type: bool
+    value: false
+    tags:
+      - trackpad
