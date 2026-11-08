@@ -1056,7 +1056,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Interactive new Mac setup app.")
     parser.add_argument("--all", action="store_true", help="Run all setup steps without the TUI.")
     parser.add_argument("--link", action="store_true", help="Link all dotfiles.")
-    parser.add_argument("--brew", action="store_true", help="Install all Homebrew packages.")
+    parser.add_argument("--brew", action="store_true", help="Install Homebrew only. Choose packages in the menu, or use --all.")
     parser.add_argument("--macos", action="store_true", help="Apply macOS settings.")
     parser.add_argument("--raycast", action="store_true", help="Prepare Raycast import.")
     parser.add_argument("--manual", action="store_true", help="Show manual steps.")
@@ -1082,9 +1082,8 @@ def main() -> int:
             assert item
             run_items(item.children)
         elif args.brew:
-            item = find_item("homebrew")
-            assert item
-            run_items(item.children)
+            install_homebrew()
+            emit("Run ./setup.sh to choose which packages to install.")
         elif args.macos:
             item = find_item("macos")
             assert item
