@@ -17,6 +17,8 @@ from typing import Callable
 
 ROOT = Path(__file__).resolve().parent
 HOME = Path.home()
+# Homebrew 7 asks before installing a formula and its dependencies by default.
+os.environ.setdefault("HOMEBREW_NO_ASK", "1")
 LogSink = Callable[[str], None]
 LOG_SINK: LogSink | None = None
 
